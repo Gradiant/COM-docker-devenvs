@@ -17,4 +17,14 @@ It installs gcc/g++ v10 and some useful utilities, namely:
             - https://alandefreitas.github.io/matplotplusplus/coding-styles/reactive-vs-quiet-figures/
             - https://alandefreitas.github.io/matplotplusplus/exporting/saving-programatically/
 
-This folder's contents shall be copied inside .devcontainer folder in a projects root dir.
+.devcontainer folder with all its contents shall be copied inside root dir of target project.
+
+## IMPORTANT!! The following fields must be updated in devcontainer.json before container build
+
+- Line 20: PSI-Header extension author name (Defaults to "<Author name>").
+
+- Line 23: PSI-Header extension author email (Defaults to "<author email>").
+
+- Line 53: PSI-Header extension project name (Defaults to "project-name").
+
+- Line 135: VSCode mount point source name for bash command history (Defaults to project-name-bashhistory)
