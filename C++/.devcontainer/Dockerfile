@@ -17,14 +17,14 @@ COPY conf/.zshrc /home/vscode
 COPY conf/custom.zsh-theme /home/vscode/.oh-my-zsh/custom/themes
 
 RUN sh scripts/install-gcc10.sh
-RUN sh scripts/install-matplotpp.sh
-RUN sh scripts/install-catch2.sh
-RUN sh scripts/install-spdlog.sh
-RUN sh scripts/install-json.sh
-RUN sh scripts/install-openblas-lapack.sh
-RUN sh scripts/install-armadillo.sh
-RUN sh scripts/install-arrayfire.sh
-RUN sh scripts/install-itpp.sh
+# RUN sh scripts/install-matplotpp.sh
+# RUN sh scripts/install-catch2.sh
+# RUN sh scripts/install-spdlog.sh
+# RUN sh scripts/install-json.sh
+# RUN sh scripts/install-openblas-lapack.sh
+# RUN sh scripts/install-armadillo.sh
+# RUN sh scripts/install-arrayfire.sh
+# RUN sh scripts/install-itpp.sh
 
 RUN SNIPPET="export PROMPT_COMMAND='history -a' && export HISTFILE=/commandhistory/.zsh_history" \
   && mkdir /commandhistory \

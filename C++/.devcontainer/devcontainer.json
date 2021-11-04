@@ -132,7 +132,7 @@
 	// From vscode documentation, persist bash history and installed extensions on rebuild
 	// https://code.visualstudio.com/docs/remote/containers-advanced#_persist-bash-history-between-runs
 	"mounts": [
-		"source=<project-name>-bashhistory,target=/commandhistory,type=volume"
+		"source=deemo-bashhistory,target=/commandhistory,type=volume"
 	],
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
