@@ -17,7 +17,7 @@ import logging
 def rename_to_devcontainer():
     """Renames base folder to .devcontainer after project generation."""
     LOG.info("Renaming proj folder to .devcontainer...")
-    path = Path("{}".format({{cookiecutter.project_short_name}}))
+    # path = Path("{}".format({{cookiecutter.project_short_name}}))
     # path.rename(".devcontainer")
 
 
