@@ -34,5 +34,6 @@
   "install_itpp_script": [
     "no",
     "yes"
-  ]
+  ],
+  "__base_folder_name": ".devcontainer"
 }
