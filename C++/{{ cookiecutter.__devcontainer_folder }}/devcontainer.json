@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.183.0/containers/cpp
 {
-	"name": "GRD C++ DEV ENVIRONMENT",
+	"name": "{{ cookiecutter.project_name }} DEV Container",
 	"build": {
 		"dockerfile": "Dockerfile",
 		// Update 'VARIANT' to pick an Debian / Ubuntu OS version: debian-10, debian-9, ubuntu-20.04, ubuntu-18.04
@@ -17,10 +17,10 @@
 	// Set *default* container specific settings.json values on container create.
 	"settings": {
 		"psi-header.config": {
-			"author": "<Author name>",
+			"author": "{{ cookiecutter.full_name }}",
 			"company": "Centro Tecnolóxico de Telecomunicacións de Galicia",
 			"copyrightHolder": "GRADIANT",
-			"authorEmail": "<author email>",
+			"authorEmail": "{{ cookiecutter.email }}",
 			"blankLinesAfter": 1
 		},
 		"psi-header.lang-config": [
@@ -50,11 +50,17 @@
 		"psi-header.variables": [
 			[
 				"project",
-				"project-name"
+				"{{ cookiecutter.project_name.upper() }}"
 			]
 		],
 		"psi-header.changes-tracking": {
 			"autoHeader": "autoSave",
+			"include": [
+				"cpp"
+			],
+			"excludeGlob": [
+				"*"
+			]
 		},
 		"[cpp]": {
 			"editor.autoIndent": "full"
@@ -75,33 +81,15 @@
 		"editor.minimap.maxColumn": 100,
 		"cmake.cmakePath": "cmake",
 		"terminal.integrated.defaultProfile.linux": "zsh",
-		"taskExplorer.exclude": [
-			"**/.vscode-test/**",
-			"**/bin/**",
-			"**/build/**",
-			"**/CompiledOutput/**",
-			"**/dist/**",
-			"**/doc/**",
-			"**/ext/**",
-			"**/out/**",
-			"**/output/**",
-			"**/packages/**",
-			"**/release/**",
-			"**/releases/**",
-			"**/samples/**",
-			"**/sdks/**",
-			"**/static/**",
-			"**/target/**",
-			"**/test/**",
-			"**/third_party/**",
-			"**/vendor/**",
-			"**/work/**",
-			"**/.devcontainer/**"
-		],
 		"C/C++ Include Guard.Macro Type": "Filename",
 		"C/C++ Include Guard.Remove Extension": false,
-		"C/C++ Include Guard.Prefix": "SIOT_",
-		"testMate.cpp.test.runtimeLimit": 120
+		"C/C++ Include Guard.Prefix": "{{ cookiecutter.project_short_name }}",
+		"testMate.cpp.test.runtimeLimit": 1200,
+		"testMate.cpp.discovery.runtimeLimit": 20,
+		"testExplorer.addToEditorContextMenu": true,
+		"testExplorer.onReload": "reset",
+		"testExplorer.onStart": "retire",
+		"testExplorer.useNativeTesting": true
 	},
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
@@ -128,11 +116,6 @@
 		"fabiospampinato.vscode-todo-plus",
 		"sleistner.vscode-fileutils",
 		"ms-vsliveshare.vsliveshare"
-	],
-	// From vscode documentation, persist bash history and installed extensions on rebuild
-	// https://code.visualstudio.com/docs/remote/containers-advanced#_persist-bash-history-between-runs
-	"mounts": [
-		"source=project-name-bashhistory,target=/commandhistory,type=volume"
 	],
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
