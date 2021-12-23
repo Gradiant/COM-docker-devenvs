@@ -14,14 +14,14 @@ from pathlib import Path
 import logging
 
 
-def clean():
-    """Remove files and folders only needed as input for generation."""
-    LOG.info("Removing default proj folder ...")
+def rename_to_devcontainer():
+    """Renames base folder to .devcontainer after project generation."""
+    LOG.info("Renaming proj folder to .devcontainer...")
     path = Path("./{}".format({{cookiecutter.project_name_short}}))
-    path.rmdir()
+    path.rename("./.devcontainer")
 
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.DEBUG, format="%(message)s")
     LOG = logging.getLogger("post_gen_project")
-    clean()
+    rename_to_devcontainer()
