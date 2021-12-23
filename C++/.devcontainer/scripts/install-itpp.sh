@@ -1,8 +1,6 @@
-
 #! /usr/bin/env bash
 # http://itpp.sourceforge.net/4.3.1/installation.html
 # Copyright 2020 Centro Tecnolóxico de Telecomunicacións de Galicia (Gradiant)
-
 
 ITPP_VERSION=4.3.1
 
@@ -33,6 +31,3 @@ cd ..
 
 # directory where the library is installed
 ldconfig /usr/local/lib
-
-
-

@@ -1,4 +1,3 @@
-
 #! /usr/bin/env bash
 # This script is intended to install ldpc simd library from the sdrmakerspace.
 # https://gitlab.com/librespacefoundation/sdrmakerspace/ldpc_simd
@@ -11,8 +10,7 @@ mkdir build
 cd build
 cmake ..
 make
-sudo make install 
+sudo make install
 cd ..
 cd ..
 rm ldpc_simd-master.tar.gz
-# echo "---- arrayfire Download  ----"
