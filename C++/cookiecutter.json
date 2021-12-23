@@ -35,5 +35,5 @@
     "no",
     "yes"
   ],
-  "__base_folder_name": ".devcontainer"
+  "__devcontainer_folder": ".devcontainer"
 }
