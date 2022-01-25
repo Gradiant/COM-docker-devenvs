@@ -16,21 +16,39 @@ RUN export DEBIAN_FRONTEND=noninteractive && sudo apt-get update -qq && sudo apt
 COPY conf/.zshrc /home/vscode
 COPY conf/custom.zsh-theme /home/vscode/.oh-my-zsh/custom/themes
 
+{% if cookiecutter.install_gcc10_script.upper() == "YES" -%}
 RUN sh scripts/install-gcc10.sh
-# RUN sh scripts/install-matplotpp.sh
-# RUN sh scripts/install-catch2.sh
-# RUN sh scripts/install-spdlog.sh
-# RUN sh scripts/install-json.sh
-# RUN sh scripts/install-openblas-lapack.sh
-# RUN sh scripts/install-armadillo.sh
-# RUN sh scripts/install-arrayfire.sh
-# RUN sh scripts/install-itpp.sh
+{% endif %}
 
-RUN SNIPPET="export PROMPT_COMMAND='history -a' && export HISTFILE=/commandhistory/.zsh_history" \
-  && mkdir /commandhistory \
-  && touch /commandhistory/.zsh_history \
-  && sudo chown -R vscode /commandhistory \
-  && echo $SNIPPET >> "/home/vscode/.zshrc"
+{% if cookiecutter.install_matplotpp_script.upper() == "YES" -%}
+RUN sh scripts/install-matplotpp.sh
+{% endif %}
+
+{% if cookiecutter.install_catch2_script.upper() == "YES" -%}
+RUN sh scripts/install-catch2.sh
+{% endif %}
+
+{% if cookiecutter.install_spdlog_script.upper() == "YES" -%}
+RUN sh scripts/install-spdlog.sh
+{% endif %}
+
+{% if cookiecutter.install_json_script.upper() == "YES" -%}
+RUN sh scripts/install-json.sh
+{% endif %}
+
+{% if cookiecutter.install_armadillo_scripts.upper() == "YES" -%}
+RUN sh scripts/install-openblas-lapack.sh
+RUN sh scripts/install-armadillo.sh
+{% endif %}
+
+{% if cookiecutter.install_arrrayfire_script.upper() == "YES" -%}
+RUN sh scripts/install-arrayfire.sh
+{% endif %}
+
+{% if cookiecutter.install_itpp_script.upper() == "YES" -%}
+RUN sh scripts/install-itpp.sh
+{% endif %}
+
 
 # Set the default shell to bash rather than sh
 ENV SHELL /bin/zsh

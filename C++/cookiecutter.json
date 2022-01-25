@@ -1,0 +1,39 @@
+{
+  "project_name": "Project Name",
+  "project_short_name": "PNA",
+  "full_name": "Your Full Name",
+  "email": "yourmail@gradiant.org",
+  "install_gcc10_script": [
+    "no",
+    "yes"
+  ],
+  "install_matplotpp_script": [
+    "no",
+    "yes"
+  ],
+  "install_catch2_script": [
+    "no",
+    "yes"
+  ],
+  "install_spdlog_script": [
+    "no",
+    "yes"
+  ],
+  "install_json_script": [
+    "no",
+    "yes"
+  ],
+  "install_armadillo_scripts": [
+    "no",
+    "yes"
+  ],
+  "install_arrrayfire_script": [
+    "no",
+    "yes"
+  ],
+  "install_itpp_script": [
+    "no",
+    "yes"
+  ],
+  "__devcontainer_folder": ".devcontainer"
+}
