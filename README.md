@@ -139,6 +139,9 @@ you will be prompted to fill in the following values:
 - **dev_image_version**: Version of the image to be used for container generation. IMPORTANT! Leave
 it with the default value unless necessary (you know what you are doing).
 
+NOTE: In order to use this image, access to Gradiant's Harbor repository for COM has to be obtained,
+and successful login performed from Docker CLI.
+
 ### More docker images and configs TBD
 
 ## Contributing
