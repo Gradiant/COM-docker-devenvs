@@ -11,7 +11,7 @@ In order to start a new project, install [Cookiecutter](https://cookiecutter.rea
 $ cookiecutter https://intranet.gradiant.org/bitbucket/scm/comg/dockerfiles.git --directory="<dir-name>"
 ```
 
-Where <dir-name>is one of the sub-folders of this repository (each one will hold a different configuration for remote development in Docker containers).
+Where <dir-name> is one of the sub-folders of this repository (each one will hold a different configuration for remote development in Docker containers).
 
 It will create the appropriate .devcontainer folder in your project directory (wherever you invoke
 cookiecutter). Following, the normal procedure described in VSCode Remote container documentation
@@ -26,7 +26,7 @@ again. In order to do so, simply specify template name as argument for cookiecut
 $ cookiecutter dockerfiles --directory="<dir-name>"
 ```
 
-### C++ Dockerfile and related installation scripts (dir-name: C++)
+### C++ Dockerfile and related installation scripts (dir-name: Cpp-dockerfile)
 
 This dockerfile is intended to be used in VSCode remote container development for C++.
 
