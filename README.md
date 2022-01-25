@@ -26,9 +26,10 @@ again. In order to do so, simply specify template name as argument for cookiecut
 $ cookiecutter dockerfiles --directory="<dir-name>"
 ```
 
-### C++ Dockerfile and related installation scripts (dir-name: Cpp-dockerfile)
+### C++ Dockerfile and related installation scripts (dir-name: cpp-dockerfile)
 
-This dockerfile is intended to be used in VSCode remote container development for C++.
+This template is intended to be used in VSCode remote container development for C++. It builds a new
+image based on the contents of the provided dockerfile.
 
 It optionally installs gcc/g++ v10 and some useful utilities, namely:
 
@@ -63,6 +64,80 @@ you will be prompted to fill in the following values:
 - **install_armadillo_scripts**: flag that controls the inclusion of an Armadillo installation script
 - **install_arrrayfire_script**: flag that controls the inclusion of an Arrayfire installation script
 - **install_itpp_script**: flag that controls the inclusion of an IT++ installation script
+
+### C++ Dockerfile based on custom GRD Image (dir-name: cpp-image)
+
+This template is intended to be used in VSCode remote container development for C++. It builds a new
+image based on a previously built one which is stored in [Harbor](https://harbor.gradiant.org/com).
+
+It has many dependencies already installed and configured, namely:
+
+- Libraries:
+    - IT++: http://itpp.sourceforge.net/4.3.1/index.html
+    - Arrayfire: https://arrayfire.com/
+    - Armadillo: https://arma.sourceforge.net/docs.html
+    - JSON For Modern C++: https://github.com/nlohmann/json
+
+- Testing deps:
+    - Catch2: https://github.com/catchorg/Catch2
+    - Matplot++: https://alandefreitas.github.io/matplotplusplus/
+        - Inside Docker, the non-interactive must be used in order to avoid the invocation of a graphics
+          backend. Refs:
+            - https://alandefreitas.github.io/matplotplusplus/coding-styles/reactive-vs-quiet-figures/
+            - https://alandefreitas.github.io/matplotplusplus/exporting/saving-programatically/
+
+Note that versions of those libraries may vary between image versions. In order to check them, use
+the following command after obtaining the image:
+
+```bash
+docker image inspect --format='{{json .Config.Labels}}' <image-name>
+```
+
+OR (with [jq](https://stedolan.github.io/jq/) utility installed via apt-get)
+
+```bash
+docker image inspect --format='{{json .Config.Labels}}' <image-name> | jq
+```
+
+It shall produce a output similar (containing) to the following:
+
+```json
+{
+  "com.visualstudio.code.devcontainers.id": "cpp",
+  "com.visualstudio.code.devcontainers.release": "v0.190.0",
+  "com.visualstudio.code.devcontainers.source": "https://github.com/microsoft/vscode-dev-containers/",
+  "com.visualstudio.code.devcontainers.timestamp": "Wed, 28 Jul 2021 22:25:03 GMT",
+  "com.visualstudio.code.devcontainers.variant": "focal",
+  "copyright": "Centro Tecnolóxico de Telecomunicacións de Galicia (GRADIANT)",
+  "grd.com.dev.dep.version.armadillo": "10.5.2",
+  "grd.com.dev.dep.version.arrayfire": "3.7.3",
+  "grd.com.dev.dep.version.catch2": "3.0.0-preview3",
+  "grd.com.dev.dep.version.g++": "10",
+  "grd.com.dev.dep.version.itpp": "4.3.1",
+  "grd.com.dev.dep.version.json4moderncpp": "3.9.1",
+  "grd.com.dev.dep.version.lapack": "apt-get",
+  "grd.com.dev.dep.version.ldpc_simd": "master",
+  "grd.com.dev.dep.version.matplotpp": "1.1.0",
+  "grd.com.dev.dep.version.openblas": "apt-get",
+  "grd.com.dev.dep.version.spdlog": "1.8.5",
+  "grd.com.maintainer.mail": "aferreiro@gradiant.org",
+  "grd.com.maintainer.name": "Andrés Ferreiro González",
+  "grd.com.version": "v0.2.0",
+  "version": "0.201.8"
+}
+```
+
+#### Variables
+
+Variables allow to customize your project. After running one of the previous cookiecutter commands,
+you will be prompted to fill in the following values:
+
+- **project_name**: Project's name (SHIPMATE, STELARIS, SAURON...)
+- **project_short_name**: Some abbreviation of project's name (useful for include guards)
+- **full_name**: Your full name
+- **email**: Your corpoative email
+- **dev_image_version**: Version of the image to be used for container generation. IMPORTANT! Leave
+it with the default value unless necessary (you know what you are doing).
 
 ### More docker images and configs TBD
 
