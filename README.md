@@ -39,7 +39,7 @@ It optionally installs gcc/g++ v10 and some useful utilities, namely:
     - Armadillo: https://arma.sourceforge.net/docs.html
     - JSON For Modern C++: https://github.com/nlohmann/json
     - Geographiclib: https://geographiclib.sourceforge.io/
-    - OpenMP: https://github.com/llvm/llvm-project/releases
+    - GDAL: https://github.com/OSGeo/gdal
     - LDPC SIMD: https://sdrmaker.space/activity/ & https://gitlab.com/librespacefoundation/sdrmakerspace/ldpc_simd
     - PyBind11: https://github.com/pybind/pybind11
 
