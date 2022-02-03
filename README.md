@@ -8,7 +8,7 @@ configuration files.
 In order to start a new project, install [Cookiecutter](https://cookiecutter.readthedocs.io/en/latest/) and run the following command:
 
 ```bash
-$ cookiecutter https://intranet.gradiant.org/bitbucket/scm/comg/dockerfiles.git --directory="<dir-name>"
+$ cookiecutter https://intranet.gradiant.org/bitbucket/scm/comg/com-docker-devenvs.git --directory="<dir-name>"
 ```
 
 Where <dir-name> is one of the sub-folders of this repository (each one will hold a different configuration for remote development in Docker containers).
@@ -23,7 +23,7 @@ NOTE1: after the repository is downloaded, the template can be used again withou
 again. In order to do so, simply specify template name as argument for cookiecutter:
 
 ```bash
-$ cookiecutter dockerfiles --directory="<dir-name>"
+$ cookiecutter com-docker-devenvs --directory="<dir-name>"
 ```
 
 ### C++ Dockerfile and related installation scripts (dir-name: cpp-dockerfile)
