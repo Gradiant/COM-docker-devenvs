@@ -58,8 +58,8 @@ RUN sh scripts/install-geographiclib.sh
 RUN sh scripts/install-pybind11.sh
 {% endif -%}
 
-{%- if cookiecutter.add_openmp_install_script.upper() == "YES" -%}
-RUN sh scripts/install-openmp.sh
+{%- if cookiecutter.add_gdal_install_script.upper() == "YES" -%}
+RUN sh scripts/install-gdal.sh
 {% endif -%}
 
 {%- if cookiecutter.add_ldpc_simd_install_script.upper() == "YES" -%}

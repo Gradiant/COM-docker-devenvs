@@ -56,8 +56,8 @@ def remove_unused_script_files():
         LOG.info("Skipping pybind11 installation script file generation ...")
         path = Path("./scripts/install-pybind11.sh")
         path.unlink()
-    if "{{ cookiecutter.add_openmp_install_script.upper() }}" == "NO":
-        LOG.info("Skipping openmp installation script file generation ...")
+    if "{{ cookiecutter.add_gdal_install_script.upper() }}" == "NO":
+        LOG.info("Skipping gdal installation script file generation ...")
         path = Path("./scripts/install-openmp.sh")
         path.unlink()
     if "{{ cookiecutter.add_ldpc_simd_install_script.upper() }}" == "NO":

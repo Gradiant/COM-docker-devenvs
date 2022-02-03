@@ -43,7 +43,7 @@
     "no",
     "yes"
   ],
-  "add_openmp_install_script": [
+  "add_gdal_install_script": [
     "no",
     "yes"
   ],

@@ -70,7 +70,7 @@ you will be prompted to fill in the following values:
 - **add_itpp_install_script**: flag that controls the inclusion of an IT++ installation script
 - **add_geographiclib_install_script**: flag that controls the inclusion of an geographiclib installation script
 - **add_pybind11_install_script**: flag that controls the inclusion of an pybind11 installation script
-- **add_openmp_install_script**: flag that controls the inclusion of an OpenMP installation script
+- **add_gdal_install_script**: flag that controls the inclusion of an GDAL installation script
 - **add_ldpc_simd_install_script**: flag that controls the inclusion of an LDPC SIMD installation script
 
 ### C++ Dockerfile based on custom GRD Image (dir-name: cpp-image)
