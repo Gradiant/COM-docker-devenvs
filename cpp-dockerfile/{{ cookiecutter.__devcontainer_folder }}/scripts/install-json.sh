@@ -2,7 +2,7 @@
 # This script is intended to install JSON for Modern C++ from source
 # Copyright 2020 Centro Tecnolóxico de Telecomunicacións de Galicia (Gradiant)
 
-JSON_VERSION=3.9.1
+JSON_VERSION=3.10.5
 
 echo "---- JSON for Modern C++ Installation Script ----"
 

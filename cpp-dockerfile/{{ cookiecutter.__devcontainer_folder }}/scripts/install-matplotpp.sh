@@ -35,7 +35,7 @@ echo "resolvconf resolvconf/linkify-resolvconf boolean false" | debconf-set-sele
 echo " "
 echo "1. Installing dependencies"
 
-apt-get install -y -qq gnuplot libpng-dev libjpeg-dev
+apt-get install -y -qq --no-install-recommends gnuplot libpng-dev libjpeg-dev
 
 echo " "
 echo " "

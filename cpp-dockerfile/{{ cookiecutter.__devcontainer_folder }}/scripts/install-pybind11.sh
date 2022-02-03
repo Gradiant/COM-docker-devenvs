@@ -1,10 +1,9 @@
 #! /usr/bin/env bash
-# This script is intended to install Catch2 from source
+# This script is intended to uninstall pybind11 utility library
 # Copyright 2020 Centro Tecnolóxico de Telecomunicacións de Galicia (Gradiant)
 
-CATCH2=3.0.0-preview3
-
-echo "---- Catch2 v${CATCH2} Installation Script ----"
+PYBIND11_VERSION=2.9.1
+echo "---- pybind11 v${PYBIND11_VERSION} Installation Script ----"
 
 if ! [ $(id -u) = 0 ]; then
     echo "The script need to be run as root." >&2
@@ -23,21 +22,29 @@ set -e
 echo " "
 echo " "
 echo " "
-echo "1. Downloading Catch2 v${CATCH2}"
+echo "0. Installing prerequisites"
 
-sudo -u $REAL_USER curl -o Catch2-${CATCH2}.tar.xz -L https://github.com/catchorg/Catch2/archive/v${CATCH2}.tar.gz
-sudo -u $REAL_USER tar xvf Catch2-${CATCH2}.tar.xz
-
-cd Catch2-${CATCH2}
+apt-get install python3-dev python3-pip pytest
 
 echo " "
 echo " "
 echo " "
-echo "2. Building Catch2 v${CATCH2}"
+echo "1. Downloading pybind11 v${PYBIND11_VERSION}"
+
+sudo -u $REAL_USER curl -o pybind11-${PYBIND11_VERSION}.tar.gz -L https://codeload.github.com/pybind/pybind11/tar.gz/v${PYBIND11_VERSION}
+sudo -u $REAL_USER tar xvf pybind11-${PYBIND11_VERSION}.tar.gz
+
+cd pybind11-${PYBIND11_VERSION}
+
+echo " "
+echo " "
+echo " "
+echo "2. Building pybind11 v${PYBIND11_VERSION}"
 
 sudo -u $REAL_USER mkdir build
 
 cd build
+
 sudo -u $REAL_USER cmake ..
 
 np=$(nproc)
@@ -51,7 +58,7 @@ sudo -u $REAL_USER make -j ${jobs}
 echo " "
 echo " "
 echo " "
-echo "3. Installing Catch2 v${CATCH2}"
+echo "3. Installing pybind11 v${PYBIND11_VERSION}"
 
 make install
 

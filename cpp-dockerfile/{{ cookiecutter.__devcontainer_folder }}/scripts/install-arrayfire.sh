@@ -5,7 +5,7 @@
 #
 # Copyright 2022 Centro Tecnolóxico de Telecomunicacións de Galicia (Gradiant)
 
-ARRAYFIRE_VERSION=3.7.3
+ARRAYFIRE_VERSION=3.8.1
 
 if ! [ $(id -u) = 0 ]; then
     echo "The script need to be run as root." >&2
