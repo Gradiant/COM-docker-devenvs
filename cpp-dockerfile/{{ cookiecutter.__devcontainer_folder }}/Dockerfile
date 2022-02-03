@@ -16,7 +16,8 @@ RUN export DEBIAN_FRONTEND=noninteractive && sudo apt-get update -qq && sudo apt
 COPY conf/.zshrc /home/vscode
 COPY conf/custom.zsh-theme /home/vscode/.oh-my-zsh/custom/themes
 
-{%- if cookiecutter.add_gcc10_install_script.upper() == "YES" -%}
+
+{% if cookiecutter.add_gcc10_install_script.upper() == "YES" -%}
 RUN sh scripts/install-gcc10.sh
 {% endif -%}
 
