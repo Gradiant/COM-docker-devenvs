@@ -38,8 +38,8 @@ RUN sh scripts/install-json.sh
 {% endif -%}
 
 {%- if cookiecutter.add_armadillo_install_scripts.upper() == "YES" -%}
-RUN sh scripts/install-openblas-lapack.sh
-RUN sh scripts/install-armadillo.sh
+RUN sh scripts/install-openblas-lapack.sh \
+     && sh scripts/install-armadillo.sh
 {% endif -%}
 
 {%- if cookiecutter.add_arrayfire_install_script.upper() == "YES" -%}
