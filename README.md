@@ -66,7 +66,7 @@ you will be prompted to fill in the following values:
 - **add_spdlog_install_script**: flag that controls the inclusion of a spdlog installation script
 - **add_json_install_script**: flag that controls the inclusion of a JSON for Modern C++ installation script
 - **add_armadillo_install_scripts**: flag that controls the inclusion of an Armadillo installation script
-- **add_arrrayfire_install_script**: flag that controls the inclusion of an Arrayfire installation script
+- **add_arrayfire_install_script**: flag that controls the inclusion of an Arrayfire installation script
 - **add_itpp_install_script**: flag that controls the inclusion of an IT++ installation script
 - **add_geographiclib_install_script**: flag that controls the inclusion of an geographiclib installation script
 - **add_pybind11_install_script**: flag that controls the inclusion of an pybind11 installation script

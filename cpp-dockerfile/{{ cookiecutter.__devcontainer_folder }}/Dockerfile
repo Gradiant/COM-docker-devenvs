@@ -41,7 +41,7 @@ RUN sh scripts/install-openblas-lapack.sh
 RUN sh scripts/install-armadillo.sh
 {% endif %}
 
-{% if cookiecutter.add_arrrayfire_install_script.upper() == "YES" -%}
+{% if cookiecutter.add_arrayfire_install_script.upper() == "YES" -%}
 RUN sh scripts/install-arrayfire.sh
 {% endif %}
 

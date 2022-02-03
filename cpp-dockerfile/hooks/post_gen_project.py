@@ -40,9 +40,9 @@ def remove_unused_script_files():
         path.unlink()
         path = Path("./scripts/install-openblas-lapack.sh")
         path.unlink()
-    if "{{ cookiecutter.add_arrrayfire_install_script.upper() }}" == "NO":
-        LOG.info("Skipping arrrayfire installation script file generation ...")
-        path = Path("./scripts/install-arrrayfire.sh")
+    if "{{ cookiecutter.add_arrayfire_install_script.upper() }}" == "NO":
+        LOG.info("Skipping arrayfire installation script file generation ...")
+        path = Path("./scripts/install-arrayfire.sh")
         path.unlink()
     if "{{ cookiecutter.add_itpp_install_script.upper() }}" == "NO":
         LOG.info("Skipping itpp installation script file generation ...")
