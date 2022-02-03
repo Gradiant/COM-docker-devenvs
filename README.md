@@ -38,6 +38,10 @@ It optionally installs gcc/g++ v10 and some useful utilities, namely:
     - Arrayfire: https://arrayfire.com/
     - Armadillo: https://arma.sourceforge.net/docs.html
     - JSON For Modern C++: https://github.com/nlohmann/json
+    - Geographiclib: https://geographiclib.sourceforge.io/
+    - OpenMP: https://github.com/llvm/llvm-project/releases
+    - LDPC SIMD: https://sdrmaker.space/activity/ & https://gitlab.com/librespacefoundation/sdrmakerspace/ldpc_simd
+    - PyBind11: https://github.com/pybind/pybind11
 
 - Testing deps:
     - Catch2: https://github.com/catchorg/Catch2
@@ -56,14 +60,18 @@ you will be prompted to fill in the following values:
 - **project_short_name**: Some abbreviation of project's name (useful for include guards)
 - **full_name**: Your full name
 - **email**: Your corpoative email
-- **install_gcc10_script**: flag that controls the inclusion of a gcc10 installation script
-- **install_matplotpp_script**: flag that controls the inclusion of a matplot++ installation script
-- **install_catch2_script**: flag that controls the inclusion of a Catch2 installation script
-- **install_spdlog_script**: flag that controls the inclusion of a spdlog installation script
-- **install_json_script**: flag that controls the inclusion of a JSON for Modern C++ installation script
-- **install_armadillo_scripts**: flag that controls the inclusion of an Armadillo installation script
-- **install_arrrayfire_script**: flag that controls the inclusion of an Arrayfire installation script
-- **install_itpp_script**: flag that controls the inclusion of an IT++ installation script
+- **add_gcc10_install_script**: flag that controls the inclusion of a gcc10 installation script
+- **add_matplotpp_install_script**: flag that controls the inclusion of a matplot++ installation script
+- **add_catch2_install_script**: flag that controls the inclusion of a Catch2 installation script
+- **add_spdlog_install_script**: flag that controls the inclusion of a spdlog installation script
+- **add_json_install_script**: flag that controls the inclusion of a JSON for Modern C++ installation script
+- **add_armadillo_install_scripts**: flag that controls the inclusion of an Armadillo installation script
+- **add_arrrayfire_install_script**: flag that controls the inclusion of an Arrayfire installation script
+- **add_itpp_install_script**: flag that controls the inclusion of an IT++ installation script
+- **add_geographiclib_install_script**: flag that controls the inclusion of an geographiclib installation script
+- **add_pybind11_install_script**: flag that controls the inclusion of an pybind11 installation script
+- **add_openmp_install_script**: flag that controls the inclusion of an OpenMP installation script
+- **add_ldpc_simd_install_script**: flag that controls the inclusion of an LDPC SIMD installation script
 
 ### C++ Dockerfile based on custom GRD Image (dir-name: cpp-image)
 
