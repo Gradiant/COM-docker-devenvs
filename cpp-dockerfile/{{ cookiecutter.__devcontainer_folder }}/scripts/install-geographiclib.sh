@@ -4,7 +4,7 @@
 
 GEOGRAPHICLIB_VERSION=1.52
 
-echo "---- Geographiclib v${GEOGRAPHICLIB_VERSION} Installation Script ----"
+echo "---- GeographicLib v${GEOGRAPHICLIB_VERSION} Installation Script ----"
 
 if ! [ $(id -u) = 0 ]; then
     echo "The script need to be run as root." >&2
@@ -23,17 +23,17 @@ set -e
 echo " "
 echo " "
 echo " "
-echo "1. Downloading geographiclib v${GEOGRAPHICLIB_VERSION}"
+echo "1. Downloading GeographicLib v${GEOGRAPHICLIB_VERSION}"
 
 sudo -u $REAL_USER curl -o geographiclib-${GEOGRAPHICLIB_VERSION}.tar.gz -L https://sourceforge.net/projects/geographiclib/files/distrib/GeographicLib-${GEOGRAPHICLIB_VERSION}.tar.gz/download
 sudo -u $REAL_USER tar xvf geographiclib-${GEOGRAPHICLIB_VERSION}.tar.gz
 
-cd geographiclib-${GEOGRAPHICLIB_VERSION}
+cd GeographicLib-${GEOGRAPHICLIB_VERSION}
 
 echo " "
 echo " "
 echo " "
-echo "2. Building geographiclib v${GEOGRAPHICLIB_VERSION}"
+echo "2. Building GeographicLib v${GEOGRAPHICLIB_VERSION}"
 
 sudo -u $REAL_USER mkdir build
 
@@ -51,7 +51,7 @@ sudo -u $REAL_USER make -j ${jobs}
 echo " "
 echo " "
 echo " "
-echo "3. Installing geographiclib v${GEOGRAPHICLIB_VERSION}"
+echo "3. Installing GeographicLib v${GEOGRAPHICLIB_VERSION}"
 
 make install
 
