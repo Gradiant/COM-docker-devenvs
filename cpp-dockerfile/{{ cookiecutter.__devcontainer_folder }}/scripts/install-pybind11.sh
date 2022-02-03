@@ -24,7 +24,7 @@ echo " "
 echo " "
 echo "0. Installing prerequisites"
 
-apt-get install python3-dev python3-pip 
+apt-get install -y -qq python3-dev python3-pip 
 pip3 install pytest
 
 echo " "
