@@ -3,35 +3,51 @@
   "project_short_name": "PNA",
   "full_name": "Your Full Name",
   "email": "yourmail@gradiant.org",
-  "install_gcc10_script": [
+  "add_gcc10_install_script": [
     "no",
     "yes"
   ],
-  "install_matplotpp_script": [
+  "add_matplotpp_install_script": [
     "no",
     "yes"
   ],
-  "install_catch2_script": [
+  "add_catch2_install_script": [
     "no",
     "yes"
   ],
-  "install_spdlog_script": [
+  "add_spdlog_install_script": [
     "no",
     "yes"
   ],
-  "install_json_script": [
+  "add_json_install_script": [
     "no",
     "yes"
   ],
-  "install_armadillo_scripts": [
+  "add_armadillo_install_scripts": [
     "no",
     "yes"
   ],
-  "install_arrrayfire_script": [
+  "add_arrrayfire_install_script": [
     "no",
     "yes"
   ],
-  "install_itpp_script": [
+  "add_itpp_install_script": [
+    "no",
+    "yes"
+  ],
+  "add_geographiclib_install_script": [
+    "no",
+    "yes"
+  ],
+  "add_pybind11_install_script": [
+    "no",
+    "yes"
+  ],
+  "add_openmp_install_script": [
+    "no",
+    "yes"
+  ],
+  "add_ldpc_simd_install_script": [
     "no",
     "yes"
   ],
