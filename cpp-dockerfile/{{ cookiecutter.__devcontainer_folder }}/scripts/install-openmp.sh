@@ -28,7 +28,7 @@ echo "1. Downloading OpenMP v${OPENMP_VERSION}"
 sudo -u $REAL_USER curl -o OpenMP-${OPENMP_VERSION}.tar.gz -L https://github.com/llvm/llvm-project/releases/download/llvmorg-${OPENMP_VERSION}/openmp-${OPENMP_VERSION}.src.tar.xz
 sudo -u $REAL_USER tar xvf OpenMP-${OPENMP_VERSION}.tar.gz
 
-cd OpenMP-${OPENMP_VERSION}.src
+cd openmp-${OPENMP_VERSION}.src
 
 echo " "
 echo " "
