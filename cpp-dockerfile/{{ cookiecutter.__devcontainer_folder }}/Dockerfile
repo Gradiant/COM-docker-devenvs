@@ -16,37 +16,53 @@ RUN export DEBIAN_FRONTEND=noninteractive && sudo apt-get update -qq && sudo apt
 COPY conf/.zshrc /home/vscode
 COPY conf/custom.zsh-theme /home/vscode/.oh-my-zsh/custom/themes
 
-{% if cookiecutter.install_gcc10_script.upper() == "YES" -%}
+{% if cookiecutter.add_gcc10_install_script.upper() == "YES" -%}
 RUN sh scripts/install-gcc10.sh
 {% endif %}
 
-{% if cookiecutter.install_matplotpp_script.upper() == "YES" -%}
+{% if cookiecutter.add_matplotpp_install_script.upper() == "YES" -%}
 RUN sh scripts/install-matplotpp.sh
 {% endif %}
 
-{% if cookiecutter.install_catch2_script.upper() == "YES" -%}
+{% if cookiecutter.add_catch2_install_script.upper() == "YES" -%}
 RUN sh scripts/install-catch2.sh
 {% endif %}
 
-{% if cookiecutter.install_spdlog_script.upper() == "YES" -%}
+{% if cookiecutter.add_spdlog_install_script.upper() == "YES" -%}
 RUN sh scripts/install-spdlog.sh
 {% endif %}
 
-{% if cookiecutter.install_json_script.upper() == "YES" -%}
+{% if cookiecutter.add_json_install_script.upper() == "YES" -%}
 RUN sh scripts/install-json.sh
 {% endif %}
 
-{% if cookiecutter.install_armadillo_scripts.upper() == "YES" -%}
+{% if cookiecutter.add_armadillo_install_scripts.upper() == "YES" -%}
 RUN sh scripts/install-openblas-lapack.sh
 RUN sh scripts/install-armadillo.sh
 {% endif %}
 
-{% if cookiecutter.install_arrrayfire_script.upper() == "YES" -%}
+{% if cookiecutter.add_arrrayfire_install_script.upper() == "YES" -%}
 RUN sh scripts/install-arrayfire.sh
 {% endif %}
 
-{% if cookiecutter.install_itpp_script.upper() == "YES" -%}
+{% if cookiecutter.add_itpp_install_script.upper() == "YES" -%}
 RUN sh scripts/install-itpp.sh
+{% endif %}
+
+{% if cookiecutter.add_geographiclib_install_script.upper() == "YES" -%}
+RUN sh scripts/install-geographiclib.sh
+{% endif %}
+
+{% if cookiecutter.add_pybind11_install_script.upper() == "YES" -%}
+RUN sh scripts/install-pybind11.sh
+{% endif %}
+
+{% if cookiecutter.add_openmp_install_script.upper() == "YES" -%}
+RUN sh scripts/install-openmp.sh
+{% endif %}
+
+{% if cookiecutter.add_ldpc_simd_install_script.upper() == "YES" -%}
+RUN sh scripts/install-ldpc_simd.sh
 {% endif %}
 
 
