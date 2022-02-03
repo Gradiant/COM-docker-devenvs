@@ -58,7 +58,7 @@ def remove_unused_script_files():
         path.unlink()
     if "{{ cookiecutter.add_gdal_install_script.upper() }}" == "NO":
         LOG.info("Skipping gdal installation script file generation ...")
-        path = Path("./scripts/install-openmp.sh")
+        path = Path("./scripts/install-gdal.sh")
         path.unlink()
     if "{{ cookiecutter.add_ldpc_simd_install_script.upper() }}" == "NO":
         LOG.info("Skipping ldpc_simd installation script file generation ...")
