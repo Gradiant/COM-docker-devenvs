@@ -16,54 +16,54 @@ RUN export DEBIAN_FRONTEND=noninteractive && sudo apt-get update -qq && sudo apt
 COPY conf/.zshrc /home/vscode
 COPY conf/custom.zsh-theme /home/vscode/.oh-my-zsh/custom/themes
 
-{% if cookiecutter.add_gcc10_install_script.upper() == "YES" -%}
+{%- if cookiecutter.add_gcc10_install_script.upper() == "YES" -%}
 RUN sh scripts/install-gcc10.sh
-{% endif %}
+{% endif -%}
 
-{% if cookiecutter.add_matplotpp_install_script.upper() == "YES" -%}
+{%- if cookiecutter.add_matplotpp_install_script.upper() == "YES" -%}
 RUN sh scripts/install-matplotpp.sh
-{% endif %}
+{% endif -%}
 
-{% if cookiecutter.add_catch2_install_script.upper() == "YES" -%}
+{%- if cookiecutter.add_catch2_install_script.upper() == "YES" -%}
 RUN sh scripts/install-catch2.sh
-{% endif %}
+{% endif -%}
 
-{% if cookiecutter.add_spdlog_install_script.upper() == "YES" -%}
+{%- if cookiecutter.add_spdlog_install_script.upper() == "YES" -%}
 RUN sh scripts/install-spdlog.sh
-{% endif %}
+{% endif -%}
 
-{% if cookiecutter.add_json_install_script.upper() == "YES" -%}
+{%- if cookiecutter.add_json_install_script.upper() == "YES" -%}
 RUN sh scripts/install-json.sh
-{% endif %}
+{% endif -%}
 
-{% if cookiecutter.add_armadillo_install_scripts.upper() == "YES" -%}
+{%- if cookiecutter.add_armadillo_install_scripts.upper() == "YES" -%}
 RUN sh scripts/install-openblas-lapack.sh
 RUN sh scripts/install-armadillo.sh
-{% endif %}
+{% endif -%}
 
-{% if cookiecutter.add_arrayfire_install_script.upper() == "YES" -%}
+{%- if cookiecutter.add_arrayfire_install_script.upper() == "YES" -%}
 RUN sh scripts/install-arrayfire.sh
-{% endif %}
+{% endif -%}
 
-{% if cookiecutter.add_itpp_install_script.upper() == "YES" -%}
+{%- if cookiecutter.add_itpp_install_script.upper() == "YES" -%}
 RUN sh scripts/install-itpp.sh
-{% endif %}
+{% endif -%}
 
-{% if cookiecutter.add_geographiclib_install_script.upper() == "YES" -%}
+{%- if cookiecutter.add_geographiclib_install_script.upper() == "YES" -%}
 RUN sh scripts/install-geographiclib.sh
-{% endif %}
+{% endif -%}
 
-{% if cookiecutter.add_pybind11_install_script.upper() == "YES" -%}
+{%- if cookiecutter.add_pybind11_install_script.upper() == "YES" -%}
 RUN sh scripts/install-pybind11.sh
-{% endif %}
+{% endif -%}
 
-{% if cookiecutter.add_openmp_install_script.upper() == "YES" -%}
+{%- if cookiecutter.add_openmp_install_script.upper() == "YES" -%}
 RUN sh scripts/install-openmp.sh
-{% endif %}
+{% endif -%}
 
-{% if cookiecutter.add_ldpc_simd_install_script.upper() == "YES" -%}
+{%- if cookiecutter.add_ldpc_simd_install_script.upper() == "YES" -%}
 RUN sh scripts/install-ldpc_simd.sh
-{% endif %}
+{% endif -%}
 
 
 # Set the default shell to bash rather than sh
