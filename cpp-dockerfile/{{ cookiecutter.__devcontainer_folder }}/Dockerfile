@@ -39,7 +39,7 @@ RUN sh scripts/install-json.sh
 
 {%- if cookiecutter.add_armadillo_install_scripts.upper() == "YES" -%}
 RUN sh scripts/install-openblas-lapack.sh \
-     && sh scripts/install-armadillo.sh
+  && sh scripts/install-armadillo.sh
 {% endif -%}
 
 {%- if cookiecutter.add_arrayfire_install_script.upper() == "YES" -%}
@@ -58,8 +58,9 @@ RUN sh scripts/install-geographiclib.sh
 RUN sh scripts/install-pybind11.sh
 {% endif -%}
 
-{%- if cookiecutter.add_gdal_install_script.upper() == "YES" -%}
-RUN sh scripts/install-gdal.sh
+{%- if cookiecutter.add_gdal_install_scripts.upper() == "YES" -%}
+RUN sh scripts/install-proj.sh \
+  && sh scripts/install-gdal.sh
 {% endif -%}
 
 {%- if cookiecutter.add_ldpc_simd_install_script.upper() == "YES" -%}

@@ -23,19 +23,24 @@ set -e
 echo " "
 echo " "
 echo " "
-echo "1. Downloading GDAL v${GDAL_VERSION}"
+echo "0. Installing prerequisites"
+apt-get install -y -qq libtiff-dev libgeotiff-dev libjpeg-dev libpng-dev expat sqlite3 libsqlite3-dev zlib1g-dev libcurl4-openssl-dev
 
-sudo -u $REAL_USER curl -o gdal-${GDAL_VERSION}.tar.gz -L https://github.com/OSGeo/gdal/archive/v${GDAL_VERSION}.tar.gz
+echo " "
+echo " "
+echo " "
+echo "1. Downloading GDAL v${GDAL_VERSION}"
+sudo -u $REAL_USER curl -o gdal-${GDAL_VERSION}.tar.gz -L https://github.com/OSGeo/gdal/releases/download/v${GDAL_VERSION}/gdal-${GDAL_VERSION}.tar.gz
 sudo -u $REAL_USER tar xvf gdal-${GDAL_VERSION}.tar.gz
 
-cd gdal-${GDAL_VERSION}/gdal
+cd gdal-${GDAL_VERSION}
 
 echo " "
 echo " "
 echo " "
 echo "2. Building GDAL v${GDAL_VERSION}"
 
-./configure
+./configure --with-python=python3 --with-proj=/usr/local --enable-shared
 make clean
 
 np=$(nproc)
@@ -44,7 +49,7 @@ jobs=$((np / 2))
 
 jobs=$( (($jobs <= 1)) && echo "1" || echo "$jobs")
 
-sudo -u $REAL_USER make -j ${jobs}
+make -j ${jobs}
 
 echo " "
 echo " "

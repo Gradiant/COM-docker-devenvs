@@ -35,10 +35,10 @@ def remove_unused_script_files():
         path = Path("./scripts/install-json.sh")
         path.unlink()
     if "{{ cookiecutter.add_armadillo_install_scripts.upper() }}" == "NO":
-        LOG.info("Skipping armadillo installation script file generation ...")
-        path = Path("./scripts/install-armadillo.sh")
-        path.unlink()
+        LOG.info("Skipping armadillo installation script files generation ...")
         path = Path("./scripts/install-openblas-lapack.sh")
+        path.unlink()
+        path = Path("./scripts/install-armadillo.sh")
         path.unlink()
     if "{{ cookiecutter.add_arrayfire_install_script.upper() }}" == "NO":
         LOG.info("Skipping arrayfire installation script file generation ...")
@@ -56,8 +56,10 @@ def remove_unused_script_files():
         LOG.info("Skipping pybind11 installation script file generation ...")
         path = Path("./scripts/install-pybind11.sh")
         path.unlink()
-    if "{{ cookiecutter.add_gdal_install_script.upper() }}" == "NO":
-        LOG.info("Skipping gdal installation script file generation ...")
+    if "{{ cookiecutter.add_gdal_install_scripts.upper() }}" == "NO":
+        LOG.info("Skipping gdal installation script files generation ...")
+        path = Path("./scripts/install-proj.sh")
+        path.unlink()
         path = Path("./scripts/install-gdal.sh")
         path.unlink()
     if "{{ cookiecutter.add_ldpc_simd_install_script.upper() }}" == "NO":
