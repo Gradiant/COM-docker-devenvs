@@ -3,6 +3,6 @@
   "project_short_name": "PNA",
   "full_name": "Your Full Name",
   "email": "yourmail@gradiant.org",
-  "dev_image_version": "0.2.0",
+  "dev_image_version": "0.3.0",
   "__devcontainer_folder": ".devcontainer"
 }
