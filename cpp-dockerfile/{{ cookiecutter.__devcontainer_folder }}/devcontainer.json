@@ -83,7 +83,7 @@
 		"terminal.integrated.defaultProfile.linux": "zsh",
 		"C/C++ Include Guard.Macro Type": "Filename",
 		"C/C++ Include Guard.Remove Extension": false,
-		"C/C++ Include Guard.Prefix": "{{ cookiecutter.project_short_name }}",
+		"C/C++ Include Guard.Prefix": "{{ cookiecutter.project_short_name }}_",
 		"testMate.cpp.test.runtimeLimit": 3600,
 		"testMate.cpp.discovery.runtimeLimit": 20,
 		"testExplorer.addToEditorContextMenu": true,
