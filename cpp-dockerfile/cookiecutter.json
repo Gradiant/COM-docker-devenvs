@@ -47,9 +47,5 @@
     "no",
     "yes"
   ],
-  "add_ldpc_simd_install_script": [
-    "no",
-    "yes"
-  ],
   "__devcontainer_folder": ".devcontainer"
 }

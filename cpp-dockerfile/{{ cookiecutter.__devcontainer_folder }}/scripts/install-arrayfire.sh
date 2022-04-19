@@ -31,7 +31,10 @@ apt-get install -y -qq --no-install-recommends build-essential software-properti
 # TODO 20220124-aferreiro Make Boost installation independent
 sudo -u $REAL_USER wget https://boostorg.jfrog.io/artifactory/main/release/1.78.0/source/boost_1_78_0.tar.gz
 sudo -u $REAL_USER tar xf boost_1_78_0.tar.gz
-cp -r boost_1_78_0/boost /usr/local/include
+cd boost_1_78_0
+./bootstrap.sh --with-python=python3
+./b2 cxxflags="-std=c++17" --toolset=gcc-10 variant=release install || true
+ldconfig
 
 # # TODO 20220124-aferreiro Make CUDA toolkit installation independent
 # sudo -u $REAL_USER wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004.pin

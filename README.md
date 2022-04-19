@@ -72,7 +72,6 @@ you will be prompted to fill in the following values:
 - **add_geographiclib_install_script**: flag that controls the inclusion of an geographiclib installation script
 - **add_pybind11_install_script**: flag that controls the inclusion of an pybind11 installation script
 - **add_gdal_install_scripts**: flag that controls the inclusion of an GDAL installation script
-- **add_ldpc_simd_install_script**: flag that controls the inclusion of an LDPC SIMD installation script
 
 ### C++ Dockerfile based on custom GRD Image (dir-name: cpp-image)
 
@@ -125,7 +124,6 @@ It shall produce a output similar (containing) to the following:
   "grd.com.dev.dep.version.itpp": "4.3.1",
   "grd.com.dev.dep.version.json4moderncpp": "3.9.1",
   "grd.com.dev.dep.version.lapack": "apt-get",
-  "grd.com.dev.dep.version.ldpc_simd": "master",
   "grd.com.dev.dep.version.matplotpp": "1.1.0",
   "grd.com.dev.dep.version.openblas": "apt-get",
   "grd.com.dev.dep.version.spdlog": "1.8.5",
