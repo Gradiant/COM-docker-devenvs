@@ -2,14 +2,21 @@
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.183.0/containers/cpp
 {
 	"name": "{{ cookiecutter.project_name }} DEV Container",
-	"build": {
-		"dockerfile": "Dockerfile"
-	},
+	// If you want to use a image derived from the COM dev image, just uncomment the 'dockerfile'
+	// element and comment out the 'image'. Thus, additional config over the dockerfile (gen. image)
+	// can be performed.
+	// "dockerFile": "Dockerfile",
+	"image": "harbor.gradiant.org/com/com-cpp-devimage:{{ cookiecutter.dev_image_version }}",
 	"runArgs": [
 		"--cap-add=SYS_PTRACE",
 		"--security-opt",
 		"seccomp=unconfined"
 	],
+	"hostRequirements": {
+		"cpus": 2,
+		"memory": "8gb",
+		"storage": "20gb"
+	},
 	// Set *default* container specific settings.json values on container create.
 	"settings": {
 		"psi-header.config": {
@@ -95,7 +102,7 @@
 		"hbenl.vscode-test-explorer",
 		"streetsidesoftware.code-spell-checker",
 		"fabiospampinato.vscode-diff",
-		"oouo-diogo-perdigao.docthis",
+		"bbenoist.Doxygen",
 		"betwo.vscode-doxygen-runner",
 		"cschlosser.doxdocgen",
 		"donjayamanne.githistory",
@@ -111,12 +118,20 @@
 		"connorshea.vscode-test-explorer-status-bar",
 		"fabiospampinato.vscode-todo-plus",
 		"sleistner.vscode-fileutils",
-		"ms-vsliveshare.vsliveshare"
+		"ms-vsliveshare.vsliveshare",
+		"aprilandjan.ascii-tree-generator",
+		"acarreiro.calculate",
+		"Guyutongxue.cpp-reference",
+		"attilathedud.data-converter",
+		"bierner.docs-view",
+		"InnoCreate.StrSplt",
+		"JulioGold.vscode-smart-split-into-lines"
 	],
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "gcc -v",
 	// Uncomment to connect as non-root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-	// "remoteUser": "vscode"
+	// "remoteUser": "vscode",
+	// "updateRemoteUserUID": true,
 }

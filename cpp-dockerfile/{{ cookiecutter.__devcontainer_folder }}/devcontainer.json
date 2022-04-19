@@ -14,6 +14,11 @@
 		"--security-opt",
 		"seccomp=unconfined"
 	],
+	"hostRequirements": {
+		"cpus": 2,
+		"memory": "8gb",
+		"storage": "20gb"
+	},
 	// Set *default* container specific settings.json values on container create.
 	"settings": {
 		"psi-header.config": {
@@ -99,7 +104,7 @@
 		"hbenl.vscode-test-explorer",
 		"streetsidesoftware.code-spell-checker",
 		"fabiospampinato.vscode-diff",
-		"oouo-diogo-perdigao.docthis",
+		"bbenoist.Doxygen",
 		"betwo.vscode-doxygen-runner",
 		"cschlosser.doxdocgen",
 		"donjayamanne.githistory",
@@ -115,7 +120,15 @@
 		"connorshea.vscode-test-explorer-status-bar",
 		"fabiospampinato.vscode-todo-plus",
 		"sleistner.vscode-fileutils",
-		"ms-vsliveshare.vsliveshare"
+		"ms-vsliveshare.vsliveshare",
+		"ms-vsliveshare.vsliveshare",
+		"aprilandjan.ascii-tree-generator",
+		"acarreiro.calculate",
+		"Guyutongxue.cpp-reference",
+		"attilathedud.data-converter",
+		"bierner.docs-view",
+		"InnoCreate.StrSplt",
+		"JulioGold.vscode-smart-split-into-lines"
 	],
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
