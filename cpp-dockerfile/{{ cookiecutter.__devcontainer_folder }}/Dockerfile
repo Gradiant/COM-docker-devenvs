@@ -10,9 +10,12 @@ FROM ubuntu:focal
 
 ARG USERNAME="vscode"
 ARG USER_UID="1000"
+ARG USER_GID=${USER_UID}
 
-# Create the non-root user
-RUN useradd --uid ${USER_UID} -rm -d /home/${USERNAME} -g root -G sudo ${USERNAME} \
+# Create the user
+RUN groupadd --gid ${USER_GID} ${USERNAME} \
+  && useradd --uid ${USER_UID} --gid ${USER_GID} -m ${USERNAME} \
+  #
   # [Optional] Add sudo support. Omit if you don't need to install software after connecting.
   && apt-get update \
   && apt-get install -y -qq apt-utils build-essential sudo \
@@ -26,44 +29,47 @@ RUN apt-get update -qq && export DEBIAN_FRONTEND=noninteractive && apt-get upgra
   && sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" \
   && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /root/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting \
   && git clone https://github.com/zsh-users/zsh-autosuggestions /root/.oh-my-zsh/custom/plugins/zsh-autosuggestions \
+  && cd scripts \
   {% if cookiecutter.add_gcc10_install_script.upper() == "YES" -%}
-&& sh scripts/install-gcc10.sh \
+&& sh install-gcc10.sh \
   {% endif -%}
 {%- if cookiecutter.add_armadillo_install_scripts.upper() == "YES" -%}
-&& sh scripts/install-openblas-lapack.sh \
-  && sh scripts/install-armadillo.sh \
+&& sh install-openblas-lapack.sh \
+  && sh install-armadillo.sh \
   {% endif -%}
 {%- if cookiecutter.add_arrayfire_install_script.upper() == "YES" -%}
-&& sh scripts/install-arrayfire.sh \
+&& sh install-arrayfire.sh \
   {% endif -%}
 {%- if cookiecutter.add_matplotpp_install_script.upper() == "YES" -%}
-&& sh scripts/install-matplotpp.sh \
+&& sh install-matplotpp.sh \
   {% endif -%}
 {%- if cookiecutter.add_catch2_install_script.upper() == "YES" -%}
-&& sh scripts/install-catch2.sh \
+&& sh install-catch2.sh \
   {% endif -%}
 {%- if cookiecutter.add_spdlog_install_script.upper() == "YES" -%}
-&& sh scripts/install-spdlog.sh \
+&& sh install-spdlog.sh \
   {% endif -%}
 {%- if cookiecutter.add_json_install_script.upper() == "YES" -%}
-&& sh scripts/install-json.sh \
+&& sh install-json.sh \
   {% endif -%}
 {%- if cookiecutter.add_itpp_install_script.upper() == "YES" -%}
-&& sh scripts/install-itpp.sh \
+&& sh install-itpp.sh \
   {% endif -%}
 {%- if cookiecutter.add_pybind11_install_script.upper() == "YES" -%}
-&& sh scripts/install-pybind11.sh \
+&& sh install-pybind11.sh \
   {% endif -%}
 {%- if cookiecutter.add_gdal_install_scripts.upper() == "YES" -%}
-&& sh scripts/install-proj.sh \
-  && sh scripts/install-gdal.sh \
+&& sh install-proj.sh \
+  && sh install-gdal.sh \
   {% endif -%}
 {%- if cookiecutter.add_geographiclib_install_script.upper() == "YES" -%}
-&& sh scripts/install-geographiclib.sh \
+&& sh install-geographiclib.sh \
   {% endif -%}
-&& apt-get autoremove -y \
+&& cd .. \
+  && apt-get autoremove -y \
   && apt-get clean -y \
-  && rm -rf /var/lib/apt/lists/*
+  && rm -rf /var/lib/apt/lists/* \
+  && rm -rf scripts
 
 COPY conf/.zshrc /root
 COPY conf/custom.zsh-theme /root/.oh-my-zsh/custom/themes
