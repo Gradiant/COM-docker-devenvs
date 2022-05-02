@@ -11,7 +11,7 @@ In order to start a new project, install [Cookiecutter](https://cookiecutter.rea
 $ cookiecutter https://intranet.gradiant.org/bitbucket/scm/comg/com-docker-devenvs.git --directory="<dir-name>"
 ```
 
-Where '<dir-name>' is one of the sub-folders of this repository (each one will hold a different configuration for remote development in Docker containers).
+Where 'dir-name' is one of the sub-folders of this repository (each one will hold a different configuration for remote development in Docker containers).
 
 It will create the appropriate .devcontainer folder in your project directory (wherever you invoke
 cookiecutter). Following, the normal procedure described in VSCode Remote container documentation
