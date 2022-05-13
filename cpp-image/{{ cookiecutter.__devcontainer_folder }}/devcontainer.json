@@ -111,7 +111,7 @@
 		"psioniq.psi-header",
 		"streetsidesoftware.code-spell-checker-spanish",
 		"gruntfuggly.todo-tree",
-		"visualstudioexptteam.vscodeintellicode",
+		"VisualStudioExptTeam.vscodeintellicode",
 		"akiramiyakoda.cppincludeguard",
 		"matepek.vscode-catch2-test-adapter",
 		"ryu1kn.partial-diff",
@@ -125,7 +125,12 @@
 		"attilathedud.data-converter",
 		"bierner.docs-view",
 		"InnoCreate.StrSplt",
-		"JulioGold.vscode-smart-split-into-lines"
+		"JulioGold.vscode-smart-split-into-lines",
+		"acarreiro.calculate",
+		"ms-vscode.hexeditor",
+		"nortakales.vs-qalc",
+		"luisfontes19.vscode-swissknife",
+		"qcz.text-power-tools"
 	],
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
