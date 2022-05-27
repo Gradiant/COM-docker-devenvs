@@ -79,6 +79,9 @@ you will be prompted to fill in the following values:
 This template is intended to be used in VSCode remote container development for C++. It builds a new
 image based on a previously built one which is stored in [Harbor](https://harbor.gradiant.org/com).
 
+**NOTE THAT** cpp-devimage and cpp-devimage-soapy may have different tag versions. Please check in Harbor 
+before specifying image version in template!!
+
 It has many dependencies already installed and configured, namely:
 
 - Libraries:
