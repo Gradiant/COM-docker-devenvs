@@ -9,7 +9,7 @@
 		"--cap-add=SYS_PTRACE",
 		"--security-opt",
 		"seccomp=unconfined",
-		{%- if cookiecutter.add_uhd_soapysdr_install_scripts.upper() == "YES" -%}
+		{%- if cookiecutter.add_uhd_soapysdr_install_scripts.upper() == "YES" %}
 		"--privileged",
 		"--device=/dev/bus/usb/:/dev/bus/usb/",
 		"-v=/dev:/dev"
