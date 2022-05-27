@@ -25,7 +25,7 @@ RUN groupadd --gid ${USER_GID} ${USERNAME} \
 # Install dev dependencies
 COPY scripts scripts
 RUN apt-get update -qq && export DEBIAN_FRONTEND=noninteractive && apt-get upgrade -y -qq \
-  && apt-get install -y -qq sudo git curl wget htop nano python3 zsh bat cmake \
+  && apt-get install -y -qq git curl wget htop nano python3 zsh bat cmake gdb doxygen graphviz \
   && sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" \
   && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /root/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting \
   && git clone https://github.com/zsh-users/zsh-autosuggestions /root/.oh-my-zsh/custom/plugins/zsh-autosuggestions \
@@ -34,8 +34,7 @@ RUN apt-get update -qq && export DEBIAN_FRONTEND=noninteractive && apt-get upgra
 && sh install-gcc10.sh \
   {% endif -%}
 {%- if cookiecutter.add_armadillo_install_scripts.upper() == "YES" -%}
-&& sh install-openblas-lapack.sh \
-  && sh install-armadillo.sh \
+&& sh install-openblas-lapack.sh && sh install-armadillo.sh \
   {% endif -%}
 {%- if cookiecutter.add_arrayfire_install_script.upper() == "YES" -%}
 && sh install-arrayfire.sh \

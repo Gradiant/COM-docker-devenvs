@@ -7,4 +7,4 @@ if ! [ $(id -u) = 0 ]; then
     exit 1
 fi
 
-apt-get install -y -qq gcc-10 g++-10 gdb
+apt-get install -y -qq gcc-10 g++-10
