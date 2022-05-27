@@ -47,5 +47,9 @@
     "no",
     "yes"
   ],
+  "add_uhd_soapysdr_install_scripts": [
+    "no",
+    "yes"
+  ],
   "__devcontainer_folder": ".devcontainer"
 }

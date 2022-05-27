@@ -65,6 +65,9 @@ RUN apt-get update -qq && export DEBIAN_FRONTEND=noninteractive && apt-get upgra
 {%- if cookiecutter.add_geographiclib_install_script.upper() == "YES" -%}
 && sh install-geographiclib.sh \
   {% endif -%}
+{%- if cookiecutter.add_uhd_soapysdr_install_scripts.upper() == "YES" -%}
+&& sh install-uhd.sh && install-soapysdr.sh && install-soapysdr-uhd-module.sh \
+  {% endif -%}
 && cd .. \
   && apt-get autoremove -y \
   && apt-get clean -y \

@@ -62,6 +62,15 @@ def remove_unused_script_files():
         path.unlink()
         path = Path("./scripts/install-gdal.sh")
         path.unlink()
+    if "{{ cookiecutter.add_uhd_soapysdr_install_scripts.upper() }}" == "NO":
+        LOG.info("Skipping UHD-SoapySDR installation script files generation ...")
+        path = Path("./scripts/install-uhd.sh")
+        path.unlink()
+        path = Path("./scripts/install-soapysdr.sh")
+        path.unlink()
+        path = Path("./scripts/install-soapysdr-uhd-module.sh")
+        path.unlink()
+
 
 if __name__ == "__main__":
 

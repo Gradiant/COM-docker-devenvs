@@ -58,9 +58,9 @@ Variables allow to customize your project. After running one of the previous coo
 you will be prompted to fill in the following values:
 
 - **project_name**: Project's name (SHIPMATE, STELARIS, SAURON...)
-- **project_short_name**: Some abbreviation of project's name (useful for include guards)
+- **project_short_name**: Some abbreviation of project's name (useful for include guards: SMT, SIOT, SRN...)
 - **full_name**: Your full name
-- **email**: Your corpoative email
+- **email**: Your corporative email
 - **add_gcc10_install_script**: flag that controls the inclusion of a gcc10 installation script
 - **add_matplotpp_install_script**: flag that controls the inclusion of a matplot++ installation script
 - **add_catch2_install_script**: flag that controls the inclusion of a Catch2 installation script
@@ -71,7 +71,8 @@ you will be prompted to fill in the following values:
 - **add_itpp_install_script**: flag that controls the inclusion of an IT++ installation script
 - **add_geographiclib_install_script**: flag that controls the inclusion of an geographiclib installation script
 - **add_pybind11_install_script**: flag that controls the inclusion of an pybind11 installation script
-- **add_gdal_install_scripts**: flag that controls the inclusion of an GDAL installation script
+- **add_gdal_install_scripts**: flag that controls the inclusion of PROJ && GDAL installation scripts
+- **add_uhd_soapysdr_install_scripts**: flag that controls the inclusion of UHD && soapySDR installation scripts
 
 ### C++ Dockerfile based on custom GRD Image (dir-name: cpp-image)
 
@@ -85,6 +86,8 @@ It has many dependencies already installed and configured, namely:
     - Arrayfire: https://arrayfire.com/
     - Armadillo: https://arma.sourceforge.net/docs.html
     - JSON For Modern C++: https://github.com/nlohmann/json
+    - UHD
+    - SoapySDR
 
 - Testing deps:
     - Catch2: https://github.com/catchorg/Catch2
@@ -140,11 +143,12 @@ Variables allow to customize your project. After running one of the previous coo
 you will be prompted to fill in the following values:
 
 - **project_name**: Project's name (SHIPMATE, STELARIS, SAURON...)
-- **project_short_name**: Some abbreviation of project's name (useful for include guards)
+- **project_short_name**: Some abbreviation of project's name (useful for include guards: SMT, SIOT, SRN...)
 - **full_name**: Your full name
-- **email**: Your corpoative email
+- **email**: Your corporative email
 - **dev_image_version**: Version of the image to be used for container generation. IMPORTANT! Leave
-it with the default value unless necessary (you know what you are doing).
+  it with the default value unless necessary (you know what you are doing).
+- **add_uhd_soapysdr_install_scripts**: flag that controls the inclusion of UHD && soapySDR installation scripts
 
 NOTE: In order to use this image, access to Gradiant's Harbor repository for COM has to be obtained,
 and successful login performed from Docker CLI.

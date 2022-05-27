@@ -4,5 +4,9 @@
   "full_name": "Your Full Name",
   "email": "yourmail@gradiant.org",
   "dev_image_version": "0.3.2",
+  "add_uhd_soapysdr_install_scripts": [
+    "no",
+    "yes"
+  ],
   "__devcontainer_folder": ".devcontainer"
 }
