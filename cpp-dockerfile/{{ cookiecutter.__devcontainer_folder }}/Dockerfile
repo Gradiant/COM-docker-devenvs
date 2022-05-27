@@ -22,6 +22,10 @@ RUN groupadd --gid ${USER_GID} ${USERNAME} \
   && echo ${USERNAME} ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/${USERNAME} \
   && chmod 0440 /etc/sudoers.d/${USERNAME}
 
+{%- if cookiecutter.add_uhd_soapysdr_install_scripts.upper() == "YES" %}
+ENV UHD_IMAGES_DIR=/usr/share/uhd/images
+{% endif -%}
+
 # Install dev dependencies
 COPY scripts scripts
 RUN apt-get update -qq && export DEBIAN_FRONTEND=noninteractive && apt-get upgrade -y -qq \
