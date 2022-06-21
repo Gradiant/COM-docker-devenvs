@@ -25,7 +25,7 @@ echo " "
 echo " "
 echo "1. Downloading GeographicLib v${GEOGRAPHICLIB_VERSION}"
 
-sudo -u $REAL_USER curl -o geographiclib-${GEOGRAPHICLIB_VERSION}.tar.gz -L https://sourceforge.net/projects/geographiclib/files/distrib/GeographicLib-${GEOGRAPHICLIB_VERSION}.tar.gz/download
+sudo -u $REAL_USER curl -o geographiclib-${GEOGRAPHICLIB_VERSION}.tar.gz -L https://sourceforge.net/projects/geographiclib/files/distrib-C++/GeographicLib-${GEOGRAPHICLIB_VERSION}.tar.gz/download
 sudo -u $REAL_USER tar xvf geographiclib-${GEOGRAPHICLIB_VERSION}.tar.gz
 
 cd GeographicLib-${GEOGRAPHICLIB_VERSION}
