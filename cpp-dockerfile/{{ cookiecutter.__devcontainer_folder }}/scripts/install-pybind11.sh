@@ -2,7 +2,7 @@
 # This script is intended to uninstall pybind11 utility library
 # Copyright 2020 Centro Tecnolóxico de Telecomunicacións de Galicia (Gradiant)
 
-PYBIND11_VERSION=2.9.1
+PYBIND11_VERSION=2.9.2
 echo "---- pybind11 v${PYBIND11_VERSION} Installation Script ----"
 
 if ! [ $(id -u) = 0 ]; then
@@ -24,7 +24,7 @@ echo " "
 echo " "
 echo "0. Installing prerequisites"
 
-apt-get install -y -qq python3-dev python3-pip 
+apt-get install -y -qq python3-dev python3-pip
 pip3 install pytest
 
 echo " "

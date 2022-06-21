@@ -2,7 +2,7 @@
 # This script is intended to install geographiclib from source
 # Copyright 2022 Centro Tecnolóxico de Telecomunicacións de Galicia (Gradiant)
 
-GEOGRAPHICLIB_VERSION=1.52
+GEOGRAPHICLIB_VERSION=2.1
 
 echo "---- GeographicLib v${GEOGRAPHICLIB_VERSION} Installation Script ----"
 

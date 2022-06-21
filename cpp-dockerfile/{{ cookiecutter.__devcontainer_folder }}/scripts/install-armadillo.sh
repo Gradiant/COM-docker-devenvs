@@ -2,7 +2,7 @@
 # This script is intended to install Armadillo library
 # Copyright 2020 Centro Tecnolóxico de Telecomunicacións de Galicia (Gradiant)
 
-ARMADILLO=10.8.2
+ARMADILLO=11.2.0
 echo "---- Armadillo v${ARMADILLO} Installation Script ----"
 
 if ! [ $(id -u) = 0 ]; then

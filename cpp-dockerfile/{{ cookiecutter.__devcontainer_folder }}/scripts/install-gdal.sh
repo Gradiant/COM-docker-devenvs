@@ -2,7 +2,7 @@
 # This script is intended to install GDAL from source
 # Copyright 2022 Centro Tecnolóxico de Telecomunicacións de Galicia (Gradiant)
 
-GDAL_VERSION=3.4.1
+GDAL_VERSION=3.5.0
 
 echo "---- GDAL v${GDAL_VERSION} Installation Script ----"
 

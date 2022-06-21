@@ -2,7 +2,7 @@
 # This script is intended to install Catch2 from source
 # Copyright 2020 Centro Tecnolóxico de Telecomunicacións de Galicia (Gradiant)
 
-CATCH2=3.0.0-preview3
+CATCH2=3.0.1
 
 echo "---- Catch2 v${CATCH2} Installation Script ----"
 

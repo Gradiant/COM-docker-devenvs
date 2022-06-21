@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 # This script is intended to install SPDLOG logging library
 # Copyright 2020 Centro Tecnolóxico de Telecomunicacións de Galicia (Gradiant)
-SPDLOG=1.9.2
+SPDLOG=1.10.0
 echo "---- SPDLOG v${SPDLOG} Installation Script ----"
 if ! [ $(id -u) = 0 ]; then
     echo "The script need to be run as root." >&2

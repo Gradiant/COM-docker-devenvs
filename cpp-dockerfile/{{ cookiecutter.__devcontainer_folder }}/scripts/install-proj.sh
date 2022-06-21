@@ -2,7 +2,7 @@
 # This script is intended to install PROJ
 # Copyright 2020 Centro Tecnolóxico de Telecomunicacións de Galicia (Gradiant)
 
-PROJ_VERSION=7.2.1
+PROJ_VERSION=9.0.1
 
 echo "---- PROJ Installation Script ----"
 
@@ -41,20 +41,18 @@ echo " "
 echo " "
 echo "2. Building PROJ v${PROJ_VERSION}"
 
-./configure
+mkdir build
+cd build
 
-np=$(nproc)
-jobs=$((np / 2))
-jobs=$( (($jobs <= 1)) && echo "1" || echo "$jobs")
-
-make -j ${jobs}
+cmake ..
+cmake --build .
 
 echo " "
 echo " "
 echo " "
 echo "3. Installing PROJ v${PROJ_VERSION}"
 
-make install
+cmake --build . --target install
 
 echo " "
 echo " "
@@ -62,7 +60,9 @@ echo " "
 echo "4. Installing PROJ data"
 
 ldconfig
+
 projsync --system-directory --all
+
 ldconfig
 
 echo " "
